@@ -21,13 +21,19 @@ namespace ConsoleApp.Tests
             balance += v;
         }
 
-        public void withdraw(int i)
+        public bool withdraw(int i)
         {
-            balance -= i;
-            if (balance < 0)
+            // restrict withdrawal to amounts under 100000
+            if (i < 100000)
             {
-                balance -= 15;
+                balance -= i;
+                if (balance < 0)
+                {
+                    balance -= 15;
+                }
+            return true;
             }
+            return false;
         }
 
         public double getBalance()
