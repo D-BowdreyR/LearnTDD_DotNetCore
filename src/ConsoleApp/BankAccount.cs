@@ -8,7 +8,7 @@ namespace ConsoleApp.Tests
 
         public void deposit(int v)
         {
-            throw new NotImplementedException();
+            balance += v;
         }
     }
 }
